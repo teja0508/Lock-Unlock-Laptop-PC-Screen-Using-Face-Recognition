@@ -1,0 +1,1 @@
+"C:\Users\Riyansika\AppData\Local\Programs\Python\Python36\python.exe" "C:\Users\Riyansika\Desktop\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition-master\lock_unlock_face_recognition.py" %*
