@@ -3,6 +3,9 @@ import os
 import numpy as np    #numpy for matrix calculations
 from PIL import Image
 
+#Add the path to the script installation folder ( path to the Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition)
+customPath = "C:\\Users\\ThisIs\\JustForExample\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition" 
+
 def assure_path_exists(path):           #same as in face_dataset.py
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
@@ -10,7 +13,7 @@ def assure_path_exists(path):           #same as in face_dataset.py
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()       # Create Local Binary Patterns Histograms for face recognization
 
-detector = cv2.CascadeClassifier("C:\\Users\\Riyansika\\Desktop\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition-master\\haarcascade_frontalface_default.xml")
+detector = cv2.CascadeClassifier(customPath + "\\haarcascade_frontalface_default.xml")
 
 def getImagesAndLabels(path):       #method to get the images and label data
 
@@ -38,9 +41,9 @@ def getImagesAndLabels(path):       #method to get the images and label data
 
     return faceSamples,ids  
 
-faces,ids = getImagesAndLabels('C:\\Users\\Riyansika\\Desktop\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition-master\\dataset')  # Get the faces and IDs
+faces,ids = getImagesAndLabels(customPath + "\\dataset")  # Get the faces and IDs
 
 recognizer.train(faces, np.array(ids)) # Train the model using the faces and IDs
 
-assure_path_exists('C:\\Users\\Riyansika\\Desktop\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition-master\\trainer\\')    # Save the model into trainer.yml
-recognizer.save('C:\\Users\\Riyansika\\Desktop\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition-master\\trainer\\trainer.yml')
+assure_path_exists(customPath + "\\trainer\\")    # Save the model into trainer.yml
+recognizer.save(customPath + "\\trainer\\trainer.yml")

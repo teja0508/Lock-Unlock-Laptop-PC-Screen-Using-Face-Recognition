@@ -1,6 +1,8 @@
 import cv2              
 import os
 
+customPath = "C:\\Users\\ThisIs\\JustForExample\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition" #Add the path to the script installation folder ( path to the Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition)
+
 def check_path(path):            
     dir = os.path.dirname(path)  
     if not os.path.exists(dir):
@@ -8,7 +10,7 @@ def check_path(path):
 
 vid_cam = cv2.VideoCapture(0) 
 
-face_cascade = cv2.CascadeClassifier('C:\\Users\\Riyansika\\Desktop\\Deep-learning\\Computer-vision\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition\\haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(customPath + "\\haarcascade_frontalface_default.xml")
 
 #face_id = 2 
 face_id = input('\n enter user id end press <return> ==>  ')

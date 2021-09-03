@@ -7,6 +7,9 @@ import os
 import datetime
 import time
 
+#Add the path to the script installation folder ( path to the Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition)
+customPath = "C:\\Users\\ThisIs\\JustForExample\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition" 
+
 def assure_path_exists(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
@@ -20,11 +23,11 @@ now = now.second        #we need only seconds
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
-assure_path_exists("C:\\Users\\Riyansika\\Desktop\\Deep-learning\\Computer-vision\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition\\trainer")
+assure_path_exists(customPath + "\\trainer")
 
-recognizer.read('C:\\Users\\Riyansika\\Desktop\\Deep-learning\\Computer-vision\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition\\trainer\\trainer.yml')  #load training model
+recognizer.read(customPath + "\\trainer\\trainer.yml")  #load training model
 
-cascadePath = "C:\\Users\\Riyansika\\Desktop\\Deep-learning\\Computer-vision\\Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition\\haarcascade_frontalface_default.xml"  #cascade path
+cascadePath = customPath + "\\haarcascade_frontalface_default.xml"  #cascade path
 
 faceCascade = cv2.CascadeClassifier(cascadePath);  #load cascade
 
