@@ -25,14 +25,23 @@ Program has been divided into three Script :
 
 1) Download all the files and get the location where you have saved your files. 
 2) Install all the prerequisites using ```pip install -r requirements.txt```
-3) Run create_face_datasets.py using .bat file (as mentioned above). Make sure you have changed the address of xml file in script otherwise you will get an error. 
-4) Now run training_model.py. You can check trainer folder has been created and yml file is inside it.
-5) Now change name of script in .bat file to lock_unlock_face_recognition.py and run .bat file. This will run lock_unlock_face_recognition.py. 
-6) In order to make above py file run automatically, you will have to setup task scheduler. For this open Windows Task Scheduler and Create Task. A window will appear. In Triggers tab click New and select 'On workstation Unlock' in drop down menu.
-7) Now in Action tab, click new and select 'Start a Program' in drop down menu, Then browse the script_runner.bat file and select it.         
+3) Insert the path to your installation folder (Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition) in the customPath variable in all of three .py scripts
+4) Run create_face_datasets.py using .bat file (as mentioned above). Make sure you have changed the address of xml file in script otherwise you will get an error. 
+5) Now run training_model.py. You can check trainer folder has been created and yml file is inside it.
+6) Now change name of script in .bat file to lock_unlock_face_recognition.py and run .bat file. This will run lock_unlock_face_recognition.py. 
+7) In order to make above py file run automatically, you will have to setup task scheduler. For this open Windows Task Scheduler and Create Task. A window will appear. In Triggers tab click New and select 'On workstation Unlock' in drop down menu.
+8) Now in Action tab, click new and select 'Start a Program' in drop down menu, Then browse the script_runner.bat file and select it.         
 Congrats!! Works has been done.
 *) Now you just have to check by locking your device.
 
 Comments has been added in scripts to understand codes.
+
+# Possible problems you might come accross :
+1) The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or
+Carbon support. If you are on Ubuntu or Debian, install libgtk2.0-dev and
+pkg-config, then re-run cmake or configure script.
+
+For Windows users, you should just run pip install ```opencv-contrib-python``` and the error should be gone.
+For Linux users, there is actually explanation in the error message.
 
 ### Improvements will be appreciated. Thank you in advance.
